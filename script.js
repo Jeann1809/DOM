@@ -22,7 +22,7 @@ let bd = [
 function usuario() {
   let username = document.querySelector("#username").value;
   for (let i = 0; i < bd.length; i++) {
-    if (username == bd[i].username) {
+    if (username == bd[i].username || username == bd[i].email) {
       contraseña(i);
       return;
     }
@@ -38,4 +38,13 @@ function contraseña(numero) {
 function activo(numero) {
   if (bd[numero].active == true) alert("El registro ha sido exitoso");
   else alert ("La cuenta esta inactiva");
+}
+
+function viewPass(){
+  let type = document.querySelector("#password")
+  if(type ==="password"){
+    document.querySelector("#password").type = "text"
+  } else {
+    document.querySelector("#password").type = "password"
+  }
 }
